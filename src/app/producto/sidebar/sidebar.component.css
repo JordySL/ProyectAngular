@@ -1,0 +1,9 @@
+.producto-container{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0% 1%;
+}
+.sidebar{
+    width: 30%;
+}

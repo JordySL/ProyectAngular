@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from './../producto.service';
 import { Producto } from './../models/producto';
-
 @Component({
-  selector: 'app-producto-lista',
-  templateUrl: './producto-lista.component.html',
-  styleUrls: ['./producto-lista.component.css']
+  selector: 'app-producto-tabla',
+  templateUrl: './producto-tabla.component.html',
+  styleUrls: ['./producto-tabla.component.css']
 })
-export class ProductoListaComponent implements OnInit {
+export class ProductoTablaComponent implements OnInit {
 
   items: Producto[] = [];
   constructor(public _productoService: ProductoService) {
@@ -19,11 +18,5 @@ export class ProductoListaComponent implements OnInit {
   getProductos(offSet: Number, perPage: Number): void {
     this._productoService.getProductos(offSet, perPage)
       .subscribe((response: Producto[]) => { this.items = response });
-  }
-  clickLike(event :any): void{
-    console.log('Like');
-  }
-  clickShare(){
-    console.log('Share');
   }
 }

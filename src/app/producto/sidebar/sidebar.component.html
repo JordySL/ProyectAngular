@@ -1,0 +1,10 @@
+<div class="sidebar-container"></div>
+<ul>
+  <li *ngFor="let menuItem of menuItems">
+    <mat-toolbar-row>
+      <a mat-list-item routerLink="{{menuItem.url}}" 
+      routerLinkActive="active">{{menuItem.displayName}}</a>
+    </mat-toolbar-row>
+  </li>
+</ul>
+<div>

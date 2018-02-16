@@ -2,11 +2,11 @@ export class Producto {
     static mapFromResponse(data: any): Producto {
         return new Producto(data.id,
             data.descripcion,
-            data.stockminimo,
+            data.stockMinimo,
             data.archivo)
     }
     constructor(public id: number,
         public descripcion: string,
-        public stockminimo: number,
+        public stockMinimo: number,
         public archivo: string) { }
 }

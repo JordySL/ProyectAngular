@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductoListaComponent } from './producto-lista/producto-lista.component';
+import { ProductoContainerComponent } from './producto-container/producto-container.component';
+import { ProductoTablaComponent } from './producto-tabla/producto-tabla.component';
 const productoRouters: Routes = [
   {
-    path: '', children: [
-      { path: '', redirectTo: 'producto-lista', pathMatch: 'full' },
-      { path: 'producto-lista', component: ProductoListaComponent }
+    path: '', component: ProductoContainerComponent, children: [
+      { path: '', redirectTo: '', pathMatch: 'full' },
+      { path: 'productoCartas', component: ProductoListaComponent },
+      { path: 'productoTabla', component: ProductoTablaComponent }
     ]
   }
 ];

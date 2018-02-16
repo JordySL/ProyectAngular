@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Descripcion</td>
+    <td>Stock</td>
+  </tr>
+
+  <tr *ngFor="let item of items">
+    <td>{{item.id}}</td>
+    <td>{{item.descripcion}}</td>
+    <td>{{item.stockMinimo}}</td>
+  </tr>
+</table>
