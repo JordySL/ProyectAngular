@@ -3,10 +3,12 @@ export class Producto {
         return new Producto(data.id,
             data.descripcion,
             data.stockMinimo,
-            data.archivo)
+            data.archivo,
+            data.total)
     }
     constructor(public id: number,
         public descripcion: string,
         public stockMinimo: number,
-        public archivo: string) { }
+        public archivo: string,
+        public total: number) { }
 }

@@ -1,0 +1,8 @@
+<div *ngIf="length">
+  <mat-paginator [pageSizeOptions]="pageSizeOptions" 
+  [length]="length" 
+  [pageSize]="pageSize" 
+  [pageIndex]="pageIndex" 
+  (page)="changePage($event)">
+  </mat-paginator>
+</div>
