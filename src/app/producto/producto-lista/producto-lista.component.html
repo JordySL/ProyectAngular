@@ -17,3 +17,11 @@
   </mat-card-actions>
 </mat-card>
 </div>
+
+<app-pagination 
+[pageIndex]="pageIndex" 
+[pageSizeOptions]="pageSizeOptions"
+ [length]="NumeroRecords" 
+ [pageSize]="pageSize"
+(onPaginatorChange)="changePage($event)">
+</app-pagination>

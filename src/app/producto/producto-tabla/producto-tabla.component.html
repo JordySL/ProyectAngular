@@ -1,13 +1,21 @@
-<table>
+<div class="table-responsive">
+  <table class="table table-bordered">
   <tr>
     <td>Id</td>
     <td>Descripcion</td>
-    <td>Stock</td>
+    <td>Stock Minimo</td>
   </tr>
-
   <tr *ngFor="let item of items">
     <td>{{item.id}}</td>
     <td>{{item.descripcion}}</td>
     <td>{{item.stockMinimo}}</td>
   </tr>
 </table>
+</div>
+<app-pagination 
+[pageIndex]="pageIndex" 
+[pageSizeOptions]="pageSizeOptions"
+ [length]="NumeroRecords" 
+ [pageSize]="pageSize"
+(onPaginatorChange)="changePage($event)">
+</app-pagination>

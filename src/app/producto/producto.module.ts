@@ -11,13 +11,14 @@ import {
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProductoContainerComponent } from './producto-container/producto-container.component';
 import { ProductoTablaComponent } from './producto-tabla/producto-tabla.component';
-
+import { SharedModule } from './../shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,
     ProductoRoutingModule,
     MatCardModule, MatPaginatorModule, MatButtonModule,
-    MatToolbarModule, MatListModule
+    MatToolbarModule, MatListModule,
+    SharedModule
   ],
   declarations: [ProductoListaComponent,
     SidebarComponent, ProductoContainerComponent, ProductoTablaComponent],
