@@ -1,0 +1,12 @@
+.producto-container{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0% 1%;
+}
+.sidebar{
+    width: 21%;
+}
+.producto-subcontainer{
+    width: 77%;
+}
