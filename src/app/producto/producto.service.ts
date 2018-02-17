@@ -4,15 +4,16 @@ import { Producto } from './models/producto';
 import { Observable } from 'rxjs/Observable';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+
 @Injectable()
 export class ProductoService {
 
   urlService: string = environment.urlService;
-
   constructor(private _http: Http) { }
 
   getProductos(offSet: Number, perPage: Number): Observable<Producto[]> 
-  { const url = `${this.urlService}api/producto/GetProductos`;
+  { 
+    const url = `${this.urlService}api/producto/GetProductos`;
     const params = { offSet: offSet, perPage: perPage }
     const header = new Headers({
       'Content-Type': 'application/json'
@@ -22,5 +23,17 @@ export class ProductoService {
         return response.json()
           .map((item: Producto) => Producto.mapFromResponse(item));
       });
+  }
+  guardarProducto(descripcion: string, stock: string)
+  {
+    const url: string = `${this.urlService}api/producto/GuardarProducto`;
+    let params = new FormData();
+    params.append("descripcion",descripcion);
+    params.append("stockminimo", stock);
+
+    return this._http.post(url, params)
+    .map((response:any)=>{
+      console.log('exito');
+    });
   }
 }
