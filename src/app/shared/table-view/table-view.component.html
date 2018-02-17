@@ -1,0 +1,13 @@
+<div *ngIf="items.length > 0">
+  <ngx-datatable #table class="material striped" [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="footerHeight"
+    [rowHeight]="rowHeight" [rows]="items">
+    <span *ngFor='let column of columns'>
+      <ngx-datatable-column [name]="column.name" [prop]="column.prop" [flexGrow]="column.flexGrow" [cellTemplate]="column.template"
+        [cellClass]="column.cellClass" [headerClass]="column.headerClass"></ngx-datatable-column>
+    </span>
+  </ngx-datatable>
+</div>
+
+<div *ngIf="items.length === 0">
+  <p>There are no items at this time.</p>
+</div>

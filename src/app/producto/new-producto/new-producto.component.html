@@ -1,0 +1,22 @@
+<div>
+  <h1>Nuevo Producto</h1>
+  <mat-dialog-content>
+    <div>
+      <p>Descripcion:</p>
+      <input type="text" [(ngModel)]="descripcion">
+    </div>
+    <br>
+    <div>
+      <p>Stock:</p>
+      <input type="text" [(ngModel)]="stock">
+    </div>
+    <br>
+    <div>
+      <p>Guardar Archivo</p>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button (click)="guardarProducto()" mat-raised-button color="primary">Guardar</button>
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</div>
