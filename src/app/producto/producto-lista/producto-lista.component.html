@@ -15,8 +15,9 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="clickLike($event)">LIKE</button>
-    <button mat-button (click)="clickShare()">SHARE</button>
+    <button mat-button (click)="descargar(item.archivo)">DESCARGAR</button>
+    <button mat-button (click)="delete(item.id)">DELETE</button>
+    <button mat-button (click)="edit(item.id)">EDIT</button>
   </mat-card-actions>
 </mat-card>
 </div>

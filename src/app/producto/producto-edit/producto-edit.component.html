@@ -1,0 +1,19 @@
+<h1>Edit Product</h1>
+
+<mat-dialog-content>
+  <div>
+    <p>Descripcion:</p>
+    <input type="text" [(ngModel)]="item.descripcion">
+  </div>
+  <div>
+    <p>Stock:</p>
+    <input type="number" [(ngModel)]="item.stockMinimo">
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button (click)="updateProduct()" 
+  mat-raised-button color="primary">Actualizar</button>
+</mat-dialog-actions>

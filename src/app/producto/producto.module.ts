@@ -14,6 +14,7 @@ import { ProductoContainerComponent } from './producto-container/producto-contai
 import { ProductoTablaComponent } from './producto-tabla/producto-tabla.component';
 import { SharedModule } from './../shared/shared.module';
 import { ProductoNewComponent } from './producto-new/producto-new.component';
+import { ProductoEditComponent } from './producto-edit/producto-edit.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -25,8 +26,8 @@ import { ProductoNewComponent } from './producto-new/producto-new.component';
   ],
   declarations: [ProductoListaComponent,
     SidebarComponent, ProductoContainerComponent, ProductoTablaComponent, 
-    ProductoNewComponent],
+    ProductoNewComponent, ProductoEditComponent],
   providers: [ProductoService],
-  entryComponents: [ProductoNewComponent]
+  entryComponents: [ProductoNewComponent,ProductoEditComponent]
 })
 export class ProductoModule { }
