@@ -24,10 +24,11 @@ export class ProductoService {
           .map((item: Producto) => Producto.mapFromResponse(item));
       });
   }
-  guardarProducto(descripcion: string, stock: string)
+  guardarProducto(fileToUpload:any,descripcion: string, stock: string)
   {
     const url: string = `${this.urlService}api/producto/GuardarProducto`;
     let params = new FormData();
+    params.append("files",fileToUpload.files[0])
     params.append("descripcion",descripcion);
     params.append("stockminimo", stock);
 
@@ -36,4 +37,5 @@ export class ProductoService {
       console.log('exito');
     });
   }
+
 }

@@ -13,7 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProductoContainerComponent } from './producto-container/producto-container.component';
 import { ProductoTablaComponent } from './producto-tabla/producto-tabla.component';
 import { SharedModule } from './../shared/shared.module';
-import { NewProductoComponent } from './new-producto/new-producto.component';
+import { ProductoNewComponent } from './producto-new/producto-new.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -25,8 +25,8 @@ import { NewProductoComponent } from './new-producto/new-producto.component';
   ],
   declarations: [ProductoListaComponent,
     SidebarComponent, ProductoContainerComponent, ProductoTablaComponent, 
-    NewProductoComponent],
+    ProductoNewComponent],
   providers: [ProductoService],
-  entryComponents: [NewProductoComponent]
+  entryComponents: [ProductoNewComponent]
 })
 export class ProductoModule { }
