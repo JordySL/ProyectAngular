@@ -1,0 +1,21 @@
+<h1>Nuevo Producto</h1>
+
+<mat-dialog-content>
+  <div>
+    <p>Descripcion:</p>
+    <input type="text" [(ngModel)]="descripcion">    
+  </div>
+  <div>
+    <p>Stock:</p>
+    <input type="number" [(ngModel)]="stock">
+  </div>
+  
+  <div>
+    <input #fileInput type="file" multiple>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button (click)="guardarProducto()" mat-raised-button color="primary">Guardar</button>
+</mat-dialog-actions>

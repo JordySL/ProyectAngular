@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from './../producto.service';
 import { Producto } from './../models/producto';
-import { NewProductoComponent } from './../new-producto/new-producto.component';
+import { ProductoNewComponent } from './../producto-new/producto-new.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 @Component({
   selector: 'app-producto-lista',
@@ -43,7 +43,7 @@ export class ProductoListaComponent implements OnInit {
     this.getProductos(offset, pageSize);
   }
   openNewProducto() {
-    let dialogRef = this.dialog.open(NewProductoComponent);
+    let dialogRef = this.dialog.open(ProductoNewComponent);
     dialogRef.afterClosed().subscribe(() => {
       this.getProductos(1, 5);
     });
