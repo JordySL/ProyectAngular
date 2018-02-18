@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductoService } from './../producto.service';
 import { Producto } from './../models/producto';
 import { ProductoNewComponent } from './../producto-new/producto-new.component';
+import { ProductoEditComponent } from './../producto-edit/producto-edit.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 @Component({
   selector: 'app-producto-lista',
@@ -48,11 +49,25 @@ export class ProductoListaComponent implements OnInit {
       this.getProductos(1, 5);
     });
   }
-
-  clickLike(event: any): void {
-    console.log('Like');
+  delete(id: number): void {
+    this._productoService.deleteProducto(id)
+      .subscribe((res: any) => {
+        this.getProductos(1, 5);
+      });
   }
-  clickShare() {
-    console.log('Share');
+  edit(id: number): void {
+    let dialogRef =
+      this.dialog.open(ProductoEditComponent, { data: { id: id } });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getProductos(1, 5);
+    });
+
+  }
+  descargar(archivo: string): void {
+    this._productoService.getArchivo(archivo)
+      .subscribe(() => {
+        console.log("exito descarga");
+      })
   }
 }
